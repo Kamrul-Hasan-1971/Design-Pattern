@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Design_Pattern.Builder;
 using Design_Pattern.Factory;
 using Design_Pattern.Factory_Method;
 using Design_Pattern.Iterator;
@@ -87,11 +88,35 @@ IVehicle tataBike = tataCompany.ProduceVehicle("Bike");*/
 
 //-----------------------------------------------------------------
 // Prototype pattern
-
+/*
 List<string> options = new List<string>() { "Sunroof", "Navigations", "Leather Seats" };
 Car c1 = new Car("Ford", "Mustang", 2023, options);
 Car c2 = c1.Clone() as Car;
 c2.Options[0] = "Hasan";
 c1.Options.ForEach(Console.WriteLine);
-c2.Options.ForEach(Console.WriteLine);
+c2.Options.ForEach(Console.WriteLine);*/
+
+//---------------------------------------------------------------------------
+// Builder pattern
+
+var director = new Director();
+var builder = new ConcreteBuilder();
+director.Builder = builder;
+
+Console.WriteLine("Standard basic product:");
+director.BuildMinimalViableProduct();
+Console.WriteLine(builder.GetProduct().ListParts());
+
+Console.WriteLine("Standard full featured product:");
+director.BuildFullFeaturedProduct();
+Console.WriteLine(builder.GetProduct().ListParts());
+
+// Remember, the Builder pattern can be used without a Director
+// class.
+Console.WriteLine("Custom product:");
+builder.BuildPartA();
+builder.BuildPartC();
+Console.Write(builder.GetProduct().ListParts());
+
+
 
