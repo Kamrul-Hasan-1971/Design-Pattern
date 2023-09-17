@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Design_Pattern.Factory
 {
     /*
-     * 1) It hides the logic for instatiation.
+    * It is a creational design pattern that solves problems while creating the objects.
+    * It provides a factory and using that factory we request for object instead of directly creating it.
+     * 1) It hides the logic for instantiation.
      * 2) Reduce the duplicity of code.
      * 3) One place change will change everywhere
      */
