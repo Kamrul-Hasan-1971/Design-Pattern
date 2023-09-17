@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Pattern.Factory_Method
 {
+    // Provides an abstract class or interface for creating factory and using that factory request for object instead of directly creating it.
     // Solve problem while creating objects
     // Delegate the creation of object to subclass
     // The subclass is responsible for creating object
